@@ -15,6 +15,20 @@ class Item extends Model
         'quantity',
     ];
 
+    public function scopeSearch($query, $search = null)
+    {
+        $query->when($search, function ($query, $search) {
+            return $query->where('name', 'like', "%$search%");
+        });
+
+        return $query;
+    }
+
+    public function getQuantityDisplayAttribute()
+    {
+        return $this->quantity . ' items';
+    }
+
     public function color()
     {
         return $this->belongsTo(Color::class);
