@@ -11,6 +11,7 @@
                     </div>
                     <div class="card-tools float-right">
                         <a href="{{ route('color.index') }}" class="btn btn-ls btn-outline-primary">Color-Management</a>
+                        <a href="{{ route('type.index') }}" class="btn btn-ls btn-outline-primary">Type-Management</a>
                     </div>
                 </div>
 

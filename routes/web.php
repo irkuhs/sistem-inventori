@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\TypeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +20,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::post('/color/update/{color}', [ColorController::class, 'update'])->name('color.update');
 // Route::get('/color/delete/{color}', [ColorController::class, 'destroy'])->name('color.delete');
 Route::resource('color', ColorController::class);
+
+//Type Management Routes
+Route::resource('type', TypeController::class);
