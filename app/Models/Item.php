@@ -18,7 +18,7 @@ class Item extends Model
     public function scopeSearch($query, $search = null)
     {
         $query->when($search, function ($query, $search) {
-            return $query->where('name', 'like', "%$search%");
+            $query->where('name', 'like', '%' . $search . '%');
         });
 
         return $query;
